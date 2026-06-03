@@ -99,4 +99,4 @@ https://all-subs.onrender.com/random
 
 ## 🔍 Ключевые слова для поиска
 
-vpn, white list, white lists, wl, бл, белый список, белые списки, подписка, sub, subscription, ru, whitelist, whitelists, впн, ру, россия, рф, российская федерация, russia, russian federation, rf, render, nodejs
+vpn, white list, white lists, wl, бл, белый список, белые списки, подписка, sub, subscription, ru, whitelist, whitelists, впн, ру, россия, рф, российская федерация, russia, russian federation, rf, render
