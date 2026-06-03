@@ -1,17 +1,12 @@
 const http = require('http');
-const https = require('https');
 
 const CONFIG_URL = 'https://raw.githubusercontent.com/solovyov-jenya2004/all_subs/main/final_sorted';
 const BASE64_URL = 'https://raw.githubusercontent.com/solovyov-jenya2004/all_subs/main/final_sorted_base64';
 
-function fetchText(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, res => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
-  });
+async function fetchText(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`GitHub error: ${res.status}`);
+  return res.text();
 }
 
 function shuffle(arr) {
