@@ -50,7 +50,7 @@ const server = http.createServer(async (req, res) => {
       return res.end(body);
     }
 
-    if (path === '/random' || path === '/random/')) {
+    if (path === '/random' || path === '/random/') {
       const text = await fetchText(CONFIG_URL);
       const lines = text.split('\n').map(l => l.trim());
       const headers = lines.filter(l => l.startsWith('#'));
