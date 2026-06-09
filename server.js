@@ -22,8 +22,7 @@ const server = http.createServer(async (req, res) => {
   const path = url.pathname;
 
   try {
-    // Поддержка и final_sorted, и final-sorted
-    if (path === '/final_sorted' || path === '/final-sorted') {
+    if (path === '/final_sorted' || path === '/final_sorted/') {
       const body = await fetchText(CONFIG_URL);
       res.writeHead(200, {
         'Content-Type': 'text/plain; charset=utf-8',
@@ -39,8 +38,7 @@ const server = http.createServer(async (req, res) => {
       return res.end(body);
     }
 
-    // Поддержка и final_sorted_base64, и final-sorted-base64
-    if (path === '/final_sorted_base64' || path === '/final-sorted-base64') {
+    if (path === '/final_sorted_base64' || path === '/final_sorted_base64/') {
       const body = await fetchText(BASE64_URL);
       res.writeHead(200, {
         'Content-Type': 'text/plain; charset=utf-8',
@@ -51,7 +49,7 @@ const server = http.createServer(async (req, res) => {
       return res.end(body);
     }
 
-    if (path === '/random') {
+    if (path === '/random' || path === '/random/')) {
       const text = await fetchText(CONFIG_URL);
       const lines = text.split('\n').map(l => l.trim());
       const headers = lines.filter(l => l.startsWith('#'));
