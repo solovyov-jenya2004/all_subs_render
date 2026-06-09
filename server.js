@@ -3,6 +3,7 @@ const http = require('http');
 const CONFIG_URL = 'https://raw.githubusercontent.com/solovyov-jenya2004/all_subs/main/final_sorted';
 const BASE64_URL = 'https://raw.githubusercontent.com/solovyov-jenya2004/all_subs/main/final_sorted_base64';
 
+
 async function fetchText(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`GitHub error: ${res.status}`);
